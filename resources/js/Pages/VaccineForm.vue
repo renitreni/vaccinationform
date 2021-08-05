@@ -3,10 +3,10 @@
         <div class="container h-100">
             <header class="d-flex flex-column justify-content-center text-center">
                 <img src="resources/SEAL.jpg" class="rounded mx-auto d-block" alt="Seal">
-                <h3>Ka-Ikeng COVID-19 Vaccine</h3>
+                <h1 class="fw-bold">Ka-Ikeng COVID-19 Vaccine</h1>
                 <h4>Pre-Registration Form</h4>
             </header>
-            <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="personal-info-tab" data-bs-toggle="tab"
                             data-bs-target="#personal-info"

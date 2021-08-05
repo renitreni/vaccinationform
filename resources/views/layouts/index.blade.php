@@ -15,13 +15,9 @@
 
 </head>
 <body>
-
 <div class="wrapper">
-
-    <div class="main">
-        <main class="content">
-            @inertia
-        </main>
+    <div class="main pb-7">
+        @inertia
     </div>
 </div>
 

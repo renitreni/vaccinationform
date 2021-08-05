@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="border border-1 border-top-0 p-4 shadow">
         <div class="d-flex flex-column">
             <h1><u>Personal Information</u></h1>
             <h5>Personal na Impormasyon</h5>
