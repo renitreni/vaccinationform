@@ -10,7 +10,7 @@
                     <i class="fas fa-asterisk" style="color: red"></i>
                     Category <i>(Kategorya)</i>
                 </label>
-                <select v-model="category" class="form-select">
+                <select v-model="overview.category" class="form-select">
                     <option v-for="(text, item) in categories" v-bind:value="item">{{ text }}</option>
                 </select>
             </div>
@@ -19,7 +19,7 @@
                     <i class="fas fa-asterisk" style="color: red"></i>
                     Sub Category <i>(Sub Kategorya)</i>
                 </label>
-                <select v-model="subCategory" class="form-select">
+                <select v-model="overview.subCategory" class="form-select">
                     <option v-for="item in subCategories[category]" v-bind:value="item">{{ item }}</option>
                 </select>
             </div>
@@ -28,7 +28,7 @@
                     <i class="fas fa-asterisk" style="color: red"></i>
                     Category ID <i>(Kategorya ng ID)</i>
                 </label>
-                <select class="form-select" v-model="categoryID">
+                <select class="form-select" v-model="overview.categoryID">
                     <option v-for="item in categoryIDs" v-bind:value="item">{{ item }}</option>
                 </select>
             </div>
@@ -37,59 +37,59 @@
                     <i class="fas fa-asterisk" style="color: red"></i>
                     Category ID Others <i>(Iba pang Kategorya ng ID)</i>
                 </label>
-                <input v-model="categoryIDOther" class="required form-control">
+                <input v-model="overview.categoryIDOther" class="required form-control">
             </div>
             <div class="col-6 mb-2">
                 <label class="form-label fw-bold">
                     <i class="fas fa-asterisk" style="color: red"></i>
                     Category ID No.
                 </label>
-                <input v-model="categoryIDNo" class="form-control">
+                <input v-model="overview.categoryIDNo" class="form-control">
             </div>
             <div class="col-12 mb-2">
                 <label class="form-label fw-bold">
                     <i class="fas fa-asterisk" style="color: red"></i>
                     Philhealth No.
                 </label>
-                <input v-model="philHealthNo" type="text" class="form-control">
+                <input v-model="overview.philHealthNo" type="text" class="form-control">
             </div>
             <div class="col-3 mb-2">
                 <label class="form-label fw-bold">
                     <i class="fas fa-asterisk" style="color: red"></i>
                     Last Name <i>(Apleyido)</i>
                 </label>
-                <input v-model="lastName" type="text" class="form-control">
+                <input v-model="overview.lastName" type="text" class="form-control">
             </div>
             <div class="col-3 mb-2">
                 <label class="form-label fw-bold">
                     <i class="fas fa-asterisk" style="color: red"></i>
                     First Name <i>(Pangalan)</i>
                 </label>
-                <input v-model="firstName" type="text" class="form-control">
+                <input v-model="overview.firstName" type="text" class="form-control">
             </div>
             <div class="col-3 mb-2">
                 <label class="form-label fw-bold">
                     <i class="fas fa-asterisk" style="color: red"></i>
                     Middle Name <i>(Gitnang Apelyido)</i>
                 </label>
-                <input v-model="middleName" type="text" class="form-control">
+                <input v-model="overview.middleName" type="text" class="form-control">
             </div>
             <div class="col-2 mb-2">
                 <label class="form-label fw-bold">
                     <i class="fas fa-asterisk" style="color: red"></i>
                     Suffix
                 </label>
-                <input v-model="suffix" type="text" class="form-control">
+                <input v-model="overview.suffix" type="text" class="form-control">
             </div>
             <div class="col-12 d-flex flex-row my-auto mb-2 mt-4">
                 <div class="form-check me-5">
-                    <input class="form-check-input" type="radio" value="Mobile No." v-model="numberType">
+                    <input class="form-check-input" type="radio" value="Mobile No." v-model="overview.numberType">
                     <label class="form-check-label fw-bold">
                         Mobile No.
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" value="Telephone No." v-model="numberType">
+                    <input class="form-check-input" type="radio" value="Telephone No." v-model="overview.numberType">
                     <label class="form-check-label fw-bold">
                         Telephone No.
                     </label>
@@ -100,21 +100,21 @@
                     <i class="fas fa-asterisk" style="color: red"></i>
                     Phone No
                 </label>
-                <input v-model="phoneNo" type="text" class="form-control">
+                <input v-model="overview.phoneNo" type="text" class="form-control">
             </div>
             <div class="col-6 mb-2">
                 <label class="form-label fw-bold">
                     <i class="fas fa-asterisk" style="color: red"></i>
                     E-mail
                 </label>
-                <input v-model="email" type="email" class="form-control">
+                <input v-model="overview.email" type="email" class="form-control">
             </div>
             <div class="col-4 mb-2">
                 <label class="form-label fw-bold">
                     <i class="fas fa-asterisk" style="color: red"></i>
                     Gender
                 </label>
-                <select class="form-select" v-model="gender">
+                <select class="form-select" v-model="overview.gender">
                     <option value="male">Male (Lalaki)</option>
                     <option value="female">Female (Babae)</option>
                 </select>
@@ -124,14 +124,14 @@
                     <i class="fas fa-asterisk" style="color: red"></i>
                     Birthday
                 </label>
-                <input v-model="birthday" type="date" class="form-control">
+                <input v-model="overview.birthday" type="date" class="form-control">
             </div>
             <div class="col-4 mb-2">
                 <label class="form-label fw-bold">
                     <i class="fas fa-asterisk" style="color: red"></i>
                     Civil Status<i>(Katayuang Sibil)</i>
                 </label>
-                <select class="form-select" v-model="civilStatus">
+                <select class="form-select" v-model="overview.civilStatus">
                     <option value="single">Single (Walang asawa)</option>
                     <option value="married">Married (Kasal)</option>
                     <option value="widow or widower">Widow/Widower (Biyudo/a)</option>
@@ -143,19 +143,19 @@
                 Home Address <i>(Tirahan)</i>
             </div>
             <div class="col-6 col-lg-3 mb-2">
-                <input v-model="bldg" class="form-control">
+                <input v-model="overview.bldg" class="form-control">
                 <div class="form-text">(Rm./Flr./Unit No. &amp; Bldg. Name)</div>
             </div>
             <div class="col-6 col-lg-3 mb-2">
-                <input v-model="hln" class="form-control">
+                <input v-model="overview.hln" class="form-control">
                 <div class="form-text">(House/Lot &amp; Block No.)</div>
             </div>
             <div class="col-6 col-lg-3 mb-2">
-                <input v-model="street" class="form-control">
+                <input v-model="overview.street" class="form-control">
                 <div class="form-text">(Street Name)</div>
             </div>
             <div class="col-6 col-lg-3 mb-2">
-                <input v-model="subdivision" class="form-control">
+                <input v-model="overview.subdivision" class="form-control">
                 <div class="form-text">(Subdivision/Village)</div>
             </div>
             <div class="col-3 mb-2">
@@ -163,7 +163,7 @@
                     <i class="fas fa-asterisk" style="color: red"></i>
                     Regions <i>(Rehiyon)</i>
                 </label>
-                <select v-model="region" class="form-select">
+                <select v-model="overview.region" class="form-select">
                     <option v-for="item in regions" v-bind:value="item.name">{{ item.name }}</option>
                 </select>
             </div>
@@ -172,7 +172,7 @@
                     <i class="fas fa-asterisk" style="color: red"></i>
                     Provinces <i>(Probinsya)</i>
                 </label>
-                <select class="form-select" v-model="province">
+                <select class="form-select" v-model="overview.province">
                     <option v-for="item in provinces" v-bind:value="item.name">{{ item.name }}</option>
                 </select>
             </div>
@@ -181,7 +181,7 @@
                     <i class="fas fa-asterisk" style="color: red"></i>
                     Cities <i>(Mga Syudad)</i>
                 </label>
-                <select class="form-select" v-model="city">
+                <select class="form-select" v-model="overview.city">
                     <option v-for="item in cities" v-bind:value="item.name">{{ item.name }}</option>
                 </select>
             </div>
@@ -190,7 +190,7 @@
                     <i class="fas fa-asterisk" style="color: red"></i>
                     Barangay
                 </label>
-                <input v-model="baranggay" class="form-control">
+                <input v-model="overview.aranggay" class="form-control">
             </div>
         </div>
         <div class="d-flex flex-column mt-4 mb-3">
@@ -203,7 +203,7 @@
                     <i class="fas fa-asterisk" style="color: red"></i>
                     Employment Status <i>(Kalagayang Pangmanggagawa)</i>
                 </label>
-                <select class="form-select" v-model="employmentStatus">
+                <select class="form-select" v-model="overview.employmentStatus">
                     <option value="Government Employed (Kawani ng Gobyerno)">
                         Government Employed (Kawani ng Gobyerno)
                     </option>
@@ -226,7 +226,7 @@
                     <i class="fas fa-asterisk" style="color: red"></i>
                     Providing Care to COVID-19 patient? <i>(Nagbibigay ng direktang serbisyo hinggil sa COVID?)</i>
                 </label>
-                <select class="form-select" v-model="careProvider">
+                <select class="form-select" v-model="overview.careProvider">
                     <option value="Yes">Yes (Oo)</option>
                     <option value="No">No (Hindi)</option>
                 </select>
@@ -236,35 +236,35 @@
                     <i class="fas fa-asterisk" style="color: red"></i>
                     Occupation
                 </label>
-                <input v-model="occupation" class="form-control">
+                <input v-model="overview.occupation" class="form-control">
             </div>
             <div class="col-4 mb-2">
                 <label class="form-label fw-bold">
                     <i class="fas fa-asterisk" style="color: red"></i>
                     Employer Name
                 </label>
-                <input v-model="employerName" class="form-control">
+                <input v-model="overview.employerName" class="form-control">
             </div>
             <div class="col-4 mb-2">
                 <label class="form-label fw-bold">
                     <i class="fas fa-asterisk" style="color: red"></i>
                     Employer Contract
                 </label>
-                <input v-model="employerContract" class="form-control">
+                <input v-model="overview.employerContract" class="form-control">
             </div>
             <div class="col-12 mb-2">
                 <label class="form-label fw-bold">
                     <i class="fas fa-asterisk" style="color: red"></i>
                     Employer Address
                 </label>
-                <input v-model="employerAddress" class="form-control">
+                <input v-model="overview.employerAddress" class="form-control">
             </div>
             <div class="col-6">
                 <label class="form-label fw-bold">
                     <i class="fas fa-asterisk" style="color: red"></i>
                     Are you Pregnant? (Ikaw ba ay buntis?)
                 </label>
-                <select v-model="prenancyStatus" class="form-select">
+                <select v-model="overview.prenancyStatus" class="form-select">
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
@@ -274,7 +274,7 @@
                     <i class="fas fa-asterisk" style="color: red"></i>
                     History of Covid-19 Infection
                 </label>
-                <select v-model="historyStatus" class="form-select">
+                <select v-model="overview.historyStatus" class="form-select">
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
@@ -291,41 +291,43 @@
         name: "PersonalInformationForm.vue",
         data() {
             return {
+                overview : {
+                    prenancyStatus: 'No',
+                    historyStatus: 'No',
+                    careProvider: 'No',
+                    occupation: '',
+                    employerName: '',
+                    employerAddress: '',
+                    employerContract: '',
+                    employmentStatus: 'Private practitioner',
+                    region: 'Region I (Ilocos Region)',
+                    province: 'Ilocos Norte',
+                    city: 'City of Batac',
+                    categoryIDOther: '',
+                    category: 'A1',
+                    subCategory: 'A1.1-COVID-19 Referral Hospitals',
+                    categoryID: 'PRC Number',
+                    categoryIDNo: '',
+                    philHealthNo: '',
+                    lastName: '',
+                    firstName: '',
+                    middleName: '',
+                    suffix: '',
+                    numberType: 'Mobile No.',
+                    phoneNo: '',
+                    email: '',
+                    gender: 'male',
+                    birthday: '',
+                    civilStatus: 'single',
+                    bldg: '',
+                    hln: '',
+                    street: '',
+                    subdivision: '',
+                },
                 provinces: null,
                 cities: null,
                 baranggays: null,
                 regions: this.$attrs.regions,
-                prenancyStatus: 'No',
-                historyStatus: 'No',
-                careProvider: 'No',
-                occupation: '',
-                employerName: '',
-                employerAddress: '',
-                employerContract: '',
-                employmentStatus: 'Private practitioner',
-                region: 'Region I (Ilocos Region)',
-                province: 'Ilocos Norte',
-                city: 'City of Batac',
-                categoryIDOther: '',
-                category: 'A1',
-                subCategory: 'A1.1-COVID-19 Referral Hospitals',
-                categoryID: 'PRC Number',
-                categoryIDNo: '',
-                philHealthNo: '',
-                lastName: '',
-                firstName: '',
-                middleName: '',
-                suffix: '',
-                numberType: 'Mobile No.',
-                phoneNo: '',
-                email: '',
-                gender: 'male',
-                birthday: '',
-                civilStatus: 'single',
-                bldg: '',
-                hln: '',
-                street: '',
-                subdivision: '',
                 categoryIDs: [
                     'PRC Number',
                     'OSCA Number',
@@ -401,6 +403,12 @@
             },
             region: function (value) {
                 this.province = '';
+            },
+            'overview': {
+                handler(val){
+                    this.$emit('setPersonalInfoClick', this.overview);
+                },
+                deep: true
             }
         },
         methods: {
@@ -420,6 +428,7 @@
         mounted() {
             this.getProvinces();
             this.getCities();
+            this.$emit('setPersonalInfoClick', this.overview);
         }
     }
 </script>

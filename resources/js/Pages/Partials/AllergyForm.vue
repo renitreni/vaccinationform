@@ -1,127 +1,144 @@
 <template>
-    <section>
+    <section class="border border-1 border-top-0 p-4 shadow">
         <div class="d-flex flex-column">
-            <div>
-                <h1><strong>Allergy</strong></h1>
-            </div>
-            <div>
-                <h5>Mayroon ka ba ng mga sumusunod na Alerhiya(Allergy)?</h5>
+            <h1><u>Allergy Information</u></h1>
+            <h5>Mayroon ka ba ng mga sumusunod na Alerhiya (Allergy)?</h5>
+        </div>
+        <div class="row">
+            <div class="col-auto p-3">
+                <div class="p-2 d-flex justify-content-between">
+                    <div class="fw-bold">
+                        Allergy sa Gamot <i>(Drug Allergy)</i>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <div class="form-check mx-2">
+                            <input class="form-check-input" type="radio" name="exampleRadios-1" value="yes"
+                                   v-model="overview.drugAllergy">
+                            <label class="form-check-label">Yes</label>
+                        </div>
+                        <div class="form-check mx-3">
+                            <input class="form-check-input" type="radio" name="exampleRadios-1" value="no"
+                                   v-model="overview.drugAllergy">
+                            <label class="form-check-label">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-2 d-flex justify-content-between">
+                    <div class="fw-bold">
+                        Allergy sa Pagkain <i>(Food Allergy)</i>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <div class="form-check mx-2">
+                            <input class="form-check-input" type="radio" name="exampleRadios-2" value="yes"
+                                   v-model="overview.foodAllergy">
+                            <label class="form-check-label">Yes</label>
+                        </div>
+                        <div class="form-check mx-3">
+                            <input class="form-check-input" type="radio" name="exampleRadios-2" value="no"
+                                   v-model="overview.foodAllergy">
+                            <label class="form-check-label">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-2 d-flex justify-content-between">
+                    <div class="fw-bold">
+                        Allergy sa Insekto <i>(Insect Allergy)</i>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <div class="form-check mx-2">
+                            <input class="form-check-input" type="radio" name="exampleRadios-3" value="yes"
+                                   v-model="overview.insectAllergy">
+                            <label class="form-check-label">Yes</label>
+                        </div>
+                        <div class="form-check mx-3">
+                            <input class="form-check-input" type="radio" name="exampleRadios-3" value="no"
+                                   v-model="overview.insectAllergy">
+                            <label class="form-check-label">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-2 d-flex justify-content-between">
+                    <div class="fw-bold">
+                        Allergy sa Latex <i>(Latex Allergy)</i>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <div class="form-check mx-2">
+                            <input class="form-check-input" type="radio" name="exampleRadios-4" value="yes"
+                                   v-model="overview.latexAllergy">
+                            <label class="form-check-label">Yes</label>
+                        </div>
+                        <div class="form-check mx-3">
+                            <input class="form-check-input" type="radio" name="exampleRadios-4" value="no"
+                                   v-model="overview.latexAllergy">
+                            <label class="form-check-label">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-2 d-flex justify-content-between">
+                    <div class="fw-bold">
+                        Allergy sa Mold <i>(Mold Allergy)</i>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <div class="form-check mx-2">
+                            <input class="form-check-input" type="radio" name="exampleRadios-5" value="yes"
+                                   v-model="overview.moldAllergy">
+                            <label class="form-check-label">Yes</label>
+                        </div>
+                        <div class="form-check mx-3">
+                            <input class="form-check-input" type="radio" name="exampleRadios-5" value="no"
+                                   v-model="overview.moldAllergy">
+                            <label class="form-check-label">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-2 d-flex justify-content-between">
+                    <div class="fw-bold">
+                        Allergy sa Hayop <i>(Animal Allergy)</i>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <div class="form-check mx-2">
+                            <input class="form-check-input" type="radio" name="exampleRadios-6" value="yes"
+                                   v-model="overview.animalAllergy">
+                            <label class="form-check-label">Yes</label>
+                        </div>
+                        <div class="form-check mx-3">
+                            <input class="form-check-input" type="radio" name="exampleRadios-6" value="no"
+                                   v-model="overview.animalAllergy">
+                            <label class="form-check-label">No</label>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <table class="table">
-            <tbody>
-            <tr>
-                <td><strong>Allergy sa Gamot</strong> <br><small>(Drug Allergy)</small></td>
-                <td>
-                    <div class="btn-group" role="group">
-                        <input type="radio" class="btn-check" name="allergy1" id="a1yes"
-                               value="a1yes" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="a1yes"><strong>OO
-                            (YES)</strong></label>
-                        <input type="radio" class="btn-check" name="allergy1" id="a1no"
-                               value="a1no" autocomplete="off" checked="">
-                        <label class="btn btn-outline-primary" for="a1no">HINDI (NO)</label>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td><strong>Allergy sa Pagkain</strong> <br><small>(Food Allergy)</small>
-                </td>
-                <td>
-                    <div class="btn-group" role="group">
-                        <input type="radio" class="btn-check" name="allergy2" id="a2yes"
-                               value="a2yes" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="a2yes"><strong>OO
-                            (YES)</strong></label>
-                        <input type="radio" class="btn-check" name="allergy2" id="a2no"
-                               value="a2no" autocomplete="off" checked="">
-                        <label class="btn btn-outline-primary" for="a2no">HINDI (NO)</label>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td><strong>Allergy sa Insekto</strong> <br><small>(Insect Allergy)</small>
-                </td>
-                <td>
-                    <div class="btn-group" role="group">
-                        <input type="radio" class="btn-check" name="allergy3" id="a3yes"
-                               value="a3yes" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="a3yes"><strong>OO
-                            (YES)</strong></label>
-                        <input type="radio" class="btn-check" name="allergy3" id="a3no"
-                               value="a3no" autocomplete="off" checked="">
-                        <label class="btn btn-outline-primary" for="a3no">HINDI (NO)</label>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td><strong>Allergy sa Latex</strong> <br><small></small></td>
-                <td>
-                    <div class="btn-group" role="group">
-                        <input type="radio" class="btn-check" name="allergy4" id="a4yes"
-                               value="a4yes" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="a4yes"><strong>OO
-                            (YES)</strong></label>
-                        <input type="radio" class="btn-check" name="allergy4" id="a4no"
-                               value="a4no" autocomplete="off" checked="">
-                        <label class="btn btn-outline-primary" for="a4no">HINDI (NO)</label>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td><strong>Allergy sa Mold</strong></td>
-                <td>
-                    <div class="btn-group" role="group">
-                        <input type="radio" class="btn-check" name="allergy5" id="a5yes"
-                               value="a5yes" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="a5yes"><strong>OO
-                            (YES)</strong></label>
-                        <input type="radio" class="btn-check" name="allergy5" id="a5no"
-                               value="a5no" autocomplete="off" checked="">
-                        <label class="btn btn-outline-primary" for="a5no">HINDI (NO)</label>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td><strong>Allergy sa Alagang Hayop</strong> <br><small>(Pet
-                    Allergy)</small></td>
-                <td>
-                    <div class="btn-group" role="group">
-                        <input type="radio" class="btn-check" name="allergy6" id="a6yes"
-                               value="a6yes" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="a6yes"><strong>OO
-                            (YES)</strong></label>
-                        <input type="radio" class="btn-check" name="allergy6" id="a6no"
-                               value="a6no" autocomplete="off" checked="">
-                        <label class="btn btn-outline-primary" for="a6no">HINDI (NO)</label>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td><strong>Allergy sa Polen</strong> <br><small>(Pollen Allergy)</small>
-                </td>
-                <td>
-                    <div class="btn-group" role="group">
-                        <input type="radio" class="btn-check" name="allergy7" id="a7yes"
-                               value="a7yes" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="a7yes"><strong>OO
-                            (YES)</strong></label>
-                        <input type="radio" class="btn-check" name="allergy7" id="a7no"
-                               value="a7no" autocomplete="off" checked="">
-                        <label class="btn btn-outline-primary" for="a7no">HINDI (NO)</label>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-            </tr>
-            </tbody>
-        </table>
     </section>
 </template>
 
 <script>
     export default {
-        name: "AllergyForm.vue"
+        name: "AllergyForm.vue",
+        data() {
+            return {
+                overview: {
+                    drugAllergy: 'no',
+                    foodAllergy: 'no',
+                    insectAllergy: 'no',
+                    latexAllergy: 'no',
+                    moldAllergy: 'no',
+                    animalAllergy: 'no'
+                }
+            }
+        },
+        watch: {
+            'overview': {
+                handler(val){
+                    this.$emit('setAllegriesInfoClick', this.overview);
+                },
+                deep: true
+            }
+        },
+        mounted() {
+            this.$emit('setAllegriesInfoClick', this.overview);
+        }
     }
 </script>
 

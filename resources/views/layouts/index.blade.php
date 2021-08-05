@@ -16,7 +16,7 @@
 </head>
 <body>
 <div class="wrapper">
-    <div class="main pb-7">
+    <div class="main pb-7 bg-white">
         @inertia
     </div>
 </div>
