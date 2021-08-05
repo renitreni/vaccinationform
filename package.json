@@ -32,6 +32,7 @@
         "@popperjs/core": "^2.9.2",
         "bootstrap": "^5.0.2",
         "bootstrap5": "^1.1.9",
+        "cors": "^2.8.5",
         "vue": "^3.1.4"
     }
 }

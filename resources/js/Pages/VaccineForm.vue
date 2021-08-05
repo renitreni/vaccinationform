@@ -29,7 +29,10 @@
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="personal-info"
                      role="tabpanel" aria-labelledby="personal-info">
-                    <personal-information-form></personal-information-form>
+                    <personal-information-form v-bind:regions="data.regions" v-bind:get_provinces_link="data.get_provinces_link"
+                                               v-bind:get_cities_link="data.get_cities_link"
+                                               v-bind:get_baranggays_link="data.get_baranggays_link"
+                    ></personal-information-form>
                 </div>
                 <div class="tab-pane fade" id="allergy" role="tabpanel" aria-labelledby="allergy-tab">
                     <allergy-form></allergy-form>
@@ -49,6 +52,9 @@
     import MedicalHistoryForm from "./Partials/MedicalHistoryForm";
 
     export default {
+        props: {
+            data: Object,
+        },
         name: "VaccineForm.vue",
         components: {
             PersonalInformationForm,

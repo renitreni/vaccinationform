@@ -8,6 +8,9 @@ use App\Http\Controllers\SettingsPrivacyController;
 use App\Http\Controllers\VaccineFormController;
 
 Route::get('/', [VaccineFormController::class, 'index']);
+Route::post('/provinces', [VaccineFormController::class, 'getProvinces'])->name('get.provinces');
+Route::post('/cities', [VaccineFormController::class, 'getCities'])->name('get.cities');
+Route::post('/baranggays', [VaccineFormController::class, 'getBaranggays'])->name('get.baranggays');
 
 Auth::routes();
 

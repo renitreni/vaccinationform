@@ -158,269 +158,154 @@
                 <input v-model="subdivision" class="form-control">
                 <div class="form-text">(Subdivision/Village)</div>
             </div>
+            <div class="col-3 mb-2">
+                <label class="form-label fw-bold">
+                    <i class="fas fa-asterisk" style="color: red"></i>
+                    Regions <i>(Rehiyon)</i>
+                </label>
+                <select v-model="region" class="form-select">
+                    <option v-for="item in regions" v-bind:value="item.name">{{ item.name }}</option>
+                </select>
+            </div>
+            <div class="col-3 mb-2">
+                <label class="form-label fw-bold">
+                    <i class="fas fa-asterisk" style="color: red"></i>
+                    Provinces <i>(Probinsya)</i>
+                </label>
+                <select class="form-select" v-model="province">
+                    <option v-for="item in provinces" v-bind:value="item.name">{{ item.name }}</option>
+                </select>
+            </div>
+            <div class="col-3 mb-2">
+                <label class="form-label fw-bold">
+                    <i class="fas fa-asterisk" style="color: red"></i>
+                    Cities <i>(Mga Syudad)</i>
+                </label>
+                <select class="form-select" v-model="city">
+                    <option v-for="item in cities" v-bind:value="item.name">{{ item.name }}</option>
+                </select>
+            </div>
+            <div class="col-3 mb-2">
+                <label class="form-label fw-bold">
+                    <i class="fas fa-asterisk" style="color: red"></i>
+                    Barangay
+                </label>
+                <input v-model="baranggay" class="form-control">
+            </div>
+        </div>
+        <div class="d-flex flex-column mt-4 mb-3">
+            <h1><u>Employment Information</u></h1>
+            <h5>(Manggagawang Impormasyon)</h5>
         </div>
         <div class="row">
-            <div class="col-sm">
-                <label for="1"><strong>Region<span color="red">*</span>
-                </strong>(Rehiyon)</label>
-                <select name="region" id="region" class="required form-select valid">
-                    <option value="">Please select Region</option>
-                    <option value="Ilocos">Ilocos</option>
-                    <option value="CagayanValley">CagayanValley</option>
-                    <option value="CentralLuzon">CentralLuzon</option>
-                    <option value="CALABARZON">CALABARZON</option>
-                    <option value="BicolRegion">BicolRegion</option>
-                    <option value="WesternVisayas">WesternVisayas</option>
-                    <option value="CentralVisayas">CentralVisayas</option>
-                    <option value="EasternVisayas">EasternVisayas</option>
-                    <option value="ZamboangaPeninsula">ZamboangaPeninsula</option>
-                    <option value="NorthernMindanao">NorthernMindanao</option>
-                    <option value="DavaoRegion">DavaoRegion</option>
-                    <option value="Soccsksargen">Soccsksargen</option>
-                    <option value="NationalCapitalRegion">NationalCapitalRegion</option>
-                    <option value="CordilleraAdministrativeRegion">
-                        CordilleraAdministrativeRegion
+            <div class="col-12 mb-2">
+                <label class="form-label fw-bold">
+                    <i class="fas fa-asterisk" style="color: red"></i>
+                    Employment Status <i>(Kalagayang Pangmanggagawa)</i>
+                </label>
+                <select class="form-select" v-model="employmentStatus">
+                    <option value="Government Employed (Kawani ng Gobyerno)">
+                        Government Employed (Kawani ng Gobyerno)
                     </option>
-                    <option value="BangsamoroAutonomousRegioninMuslimMindanao">
-                        BangsamoroAutonomousRegioninMuslimMindanao
+                    <option value="Private Employed (Pribadong Manggagawa)">
+                        Private Employed (Pribadong Manggagawa)
                     </option>
-                    <option value="CARAGA">CARAGA</option>
-                    <option value="MIMAROPA">MIMAROPA</option>
-                </select>
-                <br>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                <label for="province"><strong>Province<span color="red">*</span> </strong>(Probinsya)</label>
-                <select name="province" id="province" class="form-select">
-                    <option value="">Please select Province</option>
-                    <option value="_1339_NCR_CITY_OF_MANILA_FIRST_DISTRICT"> NCR CITY OF
-                        MANILA FIRST DISTRICT
+                    <option value="Self-employed (May sariling pinagkakakitaan/negosyo)">
+                        Self-employed (May sariling pinagkakakitaan/negosyo)
                     </option>
-                    <option value="_1376_NCR_FOURTH_DISTRICT"> NCR FOURTH DISTRICT</option>
-                    <option value="_1374_NCR_SECOND_DISTRICT"> NCR SECOND DISTRICT</option>
-                    <option value="_1375_NCR_THIRD_DISTRICT"> NCR THIRD DISTRICT</option>
-                </select>
-                <br>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                <label for="city"><strong>City<span color="red">*</span> </strong> (Lungsod)</label>
-                <select name="city" id="city" class="form-select">
-                    <option value="">Please select City</option>
-                    <option value="_137601_CITY_OF_LAS_PIÑAS"> CITY OF LAS PIÑAS</option>
-                    <option value="_137602_CITY_OF_MAKATI"> CITY OF MAKATI</option>
-                    <option value="_137603_CITY_OF_MUNTINLUPA"> CITY OF MUNTINLUPA</option>
-                    <option value="_137604_CITY_OF_PARAÑAQUE"> CITY OF PARAÑAQUE</option>
-                    <option value="_137605_PASAY_CITY"> PASAY CITY</option>
-                    <option value="_137606_PATEROS"> PATEROS</option>
-                    <option value="_137607_TAGUIG_CITY"> TAGUIG CITY</option>
-                </select>
-                <br>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                <label for="brgy"><strong>Barangay<span color="red">*</span>
-                </strong></label>
-                <select name="brgy" id="brgy" class="form-select">
-                    <option value="">Please select Barangay</option>
-                    <option value="_137603001_ALABANG">ALABANG</option>
-                    <option value="_137603002_BAYANAN">BAYANAN</option>
-                    <option value="_137603003_BULI">BULI</option>
-                    <option value="_137603004_CUPANG">CUPANG</option>
-                    <option value="_137603009_NEW_ALABANG_VILLAGE">NEW ALABANG VILLAGE
+                    <option value="Private practitioner">
+                        Private practitioner
                     </option>
-                    <option value="_137603005_POBLACION">POBLACION</option>
-                    <option value="_137603006_PUTATAN">PUTATAN</option>
-                    <option value="_137603007_SUCAT">SUCAT</option>
-                    <option value="_137603008_TUNASAN">TUNASAN</option>
-                </select>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                <label for="otherbrgy"><strong></strong></label>
-                <input type="text" name="otherbrgy" id="otherbrgy"
-                       placeholder="Please specify barangay" style="display:none;"
-                       class="required form-control" value="">
-            </div>
-        </div>
-        <div class="row">
-
-        </div>
-        <div class="col-8">
-            <br>
-            <h5><strong>Employment Information</strong></h5>
-            <h6>(Manggagawang Impormasyon) </h6>
-            <br>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                <label for="empstat"><strong>Employment Status<span color="red">*</span>
-                </strong> (Kalagayang Pangmanggagawa)</label>
-                <select name="empstat" id="empstat" class="required form-select error"
-                        value="">
-                    <option value="">Please select</option>
-                    <option value="01">Government Employed (Kawani ng Gobyerno)</option>
-                    <option value="02">Private Employed (Pribadong Manggagawa)</option>
-                    <option value="03">Self-employed (May sariling
-                        pinagkakakitaan/negosyo)
+                    <option value="Unemployed">
+                        Unemployed
                     </option>
-                    <option value="04">Private practitioner</option>
-                    <option value="05">Others (Iba pa)</option>
-                    <option value="06">N/A</option>
-                </select><label for="empstat" generated="true" class="error">This field is
-                required.</label>
-                <br>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                <label for="provide"><strong>Providing Care to COVID-19 patient?<span
-                    color="red">*</span> </strong>(Nagbibigay ng direktang serbisyo hinggil
-                    sa COVID?)</label>
-                <select name="provide" id="provide" class="required form-select error"
-                        value="">
-                    <option value="">Please select</option>
-                    <option value="01">Yes (Oo)</option>
-                    <option value="02">No (Hindi)</option>
-                </select><label for="provide" generated="true" class="error">This field is
-                required.</label>
-                <br>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                <label for="profe"><strong>Occupation<span color="red">*</span> </strong>
-                    (Trabaho)</label>
-                <select name="profe" id="profe" class="required form-select error" value="">
-                    <option value="">Please select</option>
-                    <option value="01">Dental Hygienist</option>
-                    <option value="02">Dental Technologist</option>
-                    <option value="03">Dentist</option>
-                    <option value="04">Medical Technologist</option>
-                    <option value="05">Midwife</option>
-                    <option value="06">Nurse</option>
-                    <option value="07">Nutritionist-Dietician</option>
-                    <option value="08">Occupational Therapist</option>
-                    <option value="09">Optometrist</option>
-                    <option value="10">Pharmacist</option>
-                    <option value="11">Physical Therapist</option>
-                    <option value="12">Physician</option>
-                    <option value="13">Radiologic Technologist</option>
-                    <option value="14">Respiratory Therapist</option>
-                    <option value="15">X-ray Technologist</option>
-                    <option value="16">Barangay Health Worker</option>
-                    <option value="17">Maintenance Staff</option>
-                    <option value="18">Administrative Staff</option>
-                    <option value="19">Other Workers in Frontline Health Services</option>
-                    <option value="20">N/A</option>
-                </select><label for="profe" generated="true" class="error">This field is
-                required.</label>
-                <br>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-14">
-                <div class="col-sm">
-                    <label for="employername"><strong>Employer Name</strong>(Panagalan ng
-                        Kumpanya)</label>
-                    <input id="employername" name="employername" type="text"
-                           class="form-control text-uppercase" value="">
-                    <br>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                <label for="employeradd"><strong>Employer Address</strong>(Address ng
-                    Kumpanya)</label>
-                <input id="employeradd" name="employeradd" type="text"
-                       class="form-control text-uppercase" value="">
-                <br>
-            </div>
-            <div class="col-sm">
-                <label for="empmobile"><strong>Employer Contact No.<span color="red"></span>
-                    <span size="1"></span> </strong>(Kontak ng Kumpanya)</label>
-                <input id="empmobile" name="empmobile" class="form-control valid"
-                       maxlength="20" type="text" value=""
-                       onkeypress="if (!window.__cfRLUnblockHandlers) return false; return isNumberKey(event)">
-                <br>
-            </div>
-        </div>
-        <div class="col-8">
-            <br>
-            <h5><strong>Profile Information</strong></h5>
-            <br>
-        </div>
-        <div class="row" style="display:none;" id="pregnantgroup">
-            <div class="col-sm">
-                <label for="pregnant1"><strong>Pregnant?</strong><span color="red">*</span></label>
-                <select name="pregnant" id="pregnant" class="required form-select">
-                    <option value="">Please select</option>
-                    <option value="01">Yes</option>
-                    <option value="02">No</option>
                 </select>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                <label for="histocovid"><strong>History of Covid-19 Infection</strong><span
-                    color="red">*</span></label>
-                <select name="histocovid" id="histocovid" class="required form-select error"
-                        onchange="if (!window.__cfRLUnblockHandlers) return false; checkPositive(this.value);">
-                    <option value="">Please select</option>
-                    <option value="01">Yes</option>
-                    <option value="02">No</option>
-                </select><label for="histocovid" generated="true" class="error">This field
-                is required.</label>
-            </div>
-        </div>
-        <div class="row" style="display:none;" id="histoChoice">
-            <div class="col-sm">
-                <label for="dateofinfe"><strong>Date of Infection<span color="red">*</span>
-                </strong></label>
-                <input id="datetimepicker-input" class="form-control" name="dateofinfe"
-                       type="date" value="">
-            </div>
-            <div class="col-sm">
-                <label for="classinfect"><strong>Classification of
-                    Infection</strong></label>
-                <select name="classinfect" id="classinfect" class="required form-select">
-                    <option value="">Please select</option>
-                    <option value="01">Asymptomatic</option>
-                    <option value="02">Mild</option>
-                    <option value="03">Moderate</option>
-                    <option value="04">Severe</option>
-                    <option value="05">Critical</option>
+            <div class="col-12 mb-2">
+                <label class="form-label fw-bold">
+                    <i class="fas fa-asterisk" style="color: red"></i>
+                    Providing Care to COVID-19 patient? <i>(Nagbibigay ng direktang serbisyo hinggil sa COVID?)</i>
+                </label>
+                <select class="form-select" v-model="careProvider">
+                    <option value="Yes">Yes (Oo)</option>
+                    <option value="No">No (Hindi)</option>
                 </select>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-sm"></div>
+            <div class="col-3 mb-2">
+                <label class="form-label fw-bold">
+                    <i class="fas fa-asterisk" style="color: red"></i>
+                    Occupation
+                </label>
+                <input v-model="occupation" class="form-control">
+            </div>
+            <div class="col-4 mb-2">
+                <label class="form-label fw-bold">
+                    <i class="fas fa-asterisk" style="color: red"></i>
+                    Employer Name
+                </label>
+                <input v-model="employerName" class="form-control">
+            </div>
+            <div class="col-4 mb-2">
+                <label class="form-label fw-bold">
+                    <i class="fas fa-asterisk" style="color: red"></i>
+                    Employer Contract
+                </label>
+                <input v-model="employerContract" class="form-control">
+            </div>
+            <div class="col-12 mb-2">
+                <label class="form-label fw-bold">
+                    <i class="fas fa-asterisk" style="color: red"></i>
+                    Employer Address
+                </label>
+                <input v-model="employerAddress" class="form-control">
+            </div>
+            <div class="col-6">
+                <label class="form-label fw-bold">
+                    <i class="fas fa-asterisk" style="color: red"></i>
+                    Are you Pregnant? (Ikaw ba ay buntis?)
+                </label>
+                <select v-model="prenancyStatus" class="form-select">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="col-6">
+                <label class="form-label fw-bold">
+                    <i class="fas fa-asterisk" style="color: red"></i>
+                    History of Covid-19 Infection
+                </label>
+                <select v-model="historyStatus" class="form-select">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
         </div>
     </section>
 </template>
 
 <script>
     export default {
-        name: "PersonalInformationForm.vue",
-        watch: {
-            category: function (value) {
-                this.subCategory = '';
-                if (this.subCategories[value] !== undefined) {
-                    this.subCategory = this.subCategories[value][0];
-                }
-            },
-            categoryID: function (value) {
-                this.categoryIDOther = '';
-            }
+        props: {
+            data: Object,
         },
+        name: "PersonalInformationForm.vue",
         data() {
             return {
+                provinces: null,
+                cities: null,
+                baranggays: null,
+                regions: this.$attrs.regions,
+                prenancyStatus: 'No',
+                historyStatus: 'No',
+                careProvider: 'No',
+                occupation: '',
+                employerName: '',
+                employerAddress: '',
+                employerContract: '',
+                employmentStatus: 'Private practitioner',
+                region: 'Region I (Ilocos Region)',
+                province: 'Ilocos Norte',
+                city: 'City of Batac',
                 categoryIDOther: '',
                 category: 'A1',
                 subCategory: 'A1.1-COVID-19 Referral Hospitals',
@@ -504,6 +389,38 @@
                 }
             }
         },
+        watch: {
+            category: function (value) {
+                this.subCategory = '';
+                if (this.subCategories[value] !== undefined) {
+                    this.subCategory = this.subCategories[value][0];
+                }
+            },
+            categoryID: function (value) {
+                this.categoryIDOther = '';
+            },
+            region: function (value) {
+                this.province = '';
+            }
+        },
+        methods: {
+            getProvinces() {
+                var $this = this;
+                axios.post(this.$attrs.get_provinces_link, {region: this.region}).then(function (value) {
+                    $this.provinces = value.data;
+                });
+            },
+            getCities() {
+                var $this = this;
+                axios.post(this.$attrs.get_cities_link, {region: this.region}).then(function (value) {
+                    $this.cities = value.data;
+                });
+            },
+        },
+        mounted() {
+            this.getProvinces();
+            this.getCities();
+        }
     }
 </script>
 
