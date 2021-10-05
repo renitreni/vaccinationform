@@ -198,6 +198,7 @@
                 },
                 "order": [[ 0, "desc" ]],
                 "columns": [
+                    {"data": "id", "name": "id", "title": "ID"},
                     {
                         "data": function (value) {
                             return '<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">\n' +
@@ -234,7 +235,6 @@
                         $this.user_cp_modal.show();
                         $this.overview = $this.dt.row($(this).parent().parent()).data();
                     });
-
                 }
             });
         }

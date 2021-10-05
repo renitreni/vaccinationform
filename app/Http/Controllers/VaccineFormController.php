@@ -57,13 +57,9 @@ class VaccineFormController extends Controller
                 'Accept: application/json',
             ],
         ]);
-
         $response = curl_exec($curl);
-
         curl_close($curl);
-        $provinces = json_decode($response)->data;
-
-        return $provinces;
+        return json_decode($response)->data;
     }
 
     public function getCities(Request $request)
@@ -86,8 +82,6 @@ class VaccineFormController extends Controller
         $response = curl_exec($curl);
 
         curl_close($curl);
-        $provinces = json_decode($response)->data;
-
-        return $provinces;
+        return json_decode($response)->data;
     }
 }

@@ -25,7 +25,7 @@ class RolesController extends Controller
         ]);
     }
 
-    public function store(RolesStoreRequest $request, Bouncer $bouncer)
+    public function store(RolesStoreRequest $request, Bouncer $bouncer): array
     {
         $bouncer->role()->firstOrCreate([
             'name'  => ucfirst($request->role_name),
@@ -35,7 +35,7 @@ class RolesController extends Controller
         return ['success' => true];
     }
 
-    public function update(Request $request, Bouncer $bouncer)
+    public function update(Request $request, Bouncer $bouncer): array
     {
         $bouncer->role()
                 ->where('id', $request->id)
@@ -61,7 +61,7 @@ class RolesController extends Controller
         })->make(true);
     }
 
-    public function destroy(Request $request, Bouncer $bouncer)
+    public function destroy(Request $request, Bouncer $bouncer): array
     {
         $bouncer->sync(ucfirst($request->name))->abilities([]);
         $bouncer->role()

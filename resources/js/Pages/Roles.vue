@@ -175,17 +175,17 @@ export default {
         }
     },
     mounted() {
-        var $this = this;
+        let $this = this;
 
-        this.role_add_modal = new bootstrap.Modal(document.getElementById('role-add-modal'), {
+        $this.role_add_modal = new bootstrap.Modal(document.getElementById('role-add-modal'), {
             keyboard: false
         });
 
-        this.role_edit_modal = new bootstrap.Modal(document.getElementById('role-edit-modal'), {
+        $this.role_edit_modal = new bootstrap.Modal(document.getElementById('role-edit-modal'), {
             keyboard: false
         });
 
-        this.dt = $('#roles-table').DataTable({
+        $this.dt = $('#roles-table').DataTable({
             serverSide: true,
             ajax: {
                 url: $this.data.roles_table_link,

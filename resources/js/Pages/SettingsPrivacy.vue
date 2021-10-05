@@ -7,12 +7,10 @@
 
                 <div class="row">
                     <div class="col-md-3 col-xl-2">
-
                         <div class="card">
                             <div class="card-header">
                                 <h5 class="card-title mb-0">Profile Settings</h5>
                             </div>
-
                             <div class="list-group list-group-flush" role="tablist">
                                 <a class="list-group-item list-group-item-action active" data-bs-toggle="list"
                                    href="#account" role="tab">
@@ -22,26 +20,6 @@
                                    role="tab">
                                     Password
                                 </a>
-<!--                                <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#"-->
-<!--                                   role="tab">-->
-<!--                                    Privacy and safety-->
-<!--                                </a>-->
-<!--                                <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#"-->
-<!--                                   role="tab">-->
-<!--                                    Email notifications-->
-<!--                                </a>-->
-<!--                                <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#"-->
-<!--                                   role="tab">-->
-<!--                                    Web notifications-->
-<!--                                </a>-->
-<!--                                <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#"-->
-<!--                                   role="tab">-->
-<!--                                    Widgets-->
-<!--                                </a>-->
-<!--                                <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#"-->
-<!--                                   role="tab">-->
-<!--                                    Your data-->
-<!--                                </a>-->
                                 <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#"
                                    role="tab">
                                     Delete account
@@ -149,14 +127,15 @@
         },
         methods: {
             submit() {
-                var $this = this;
-                if (this.form.avatar === null || this.form.avatar === undefined) {
+                let $this = this;
+                if ($this.form.avatar === null || $this.form.avatar === undefined) {
                     alertify.error('Please select a file!');
                     return false;
                 }
-                this.form.post(this.data.upload_photo_link);
+                $this.form.post($this.data.upload_photo_link);
             },
         },
+        mounted() {}
     }
 </script>
 
