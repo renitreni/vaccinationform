@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Inertia\Inertia;
 use Illuminate\Http\Request;
+use Inertia\Response;
 
 class VaccineFormController extends Controller
 {
-    public function index()
+    public function index(): Response
     {
         $curl = curl_init();
         curl_setopt_array($curl, [
@@ -41,7 +42,7 @@ class VaccineFormController extends Controller
         ]);
     }
 
-    public function getProvinces(Request $request)
+    public function getProvinces()
     {
         $curl = curl_init();
         curl_setopt_array($curl, [
