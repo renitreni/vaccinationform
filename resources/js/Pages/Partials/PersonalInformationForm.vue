@@ -2,7 +2,7 @@
     <section class="border border-1 border-top-0 p-4 shadow">
         <div class="d-flex flex-column">
             <h1><u>Personal Information</u></h1>
-            <h5>Personal na Impormasyon</h5>
+            <h5 class="mt-2">Mga personal na impormasyon</h5>
         </div>
         <div class="row">
             <div class="col-6 mb-2">
@@ -195,7 +195,7 @@
         </div>
         <div class="d-flex flex-column mt-4 mb-3">
             <h1><u>Employment Information</u></h1>
-            <h5>(Manggagawang Impormasyon)</h5>
+            <h5>(Impormasyon ng manggagawa)</h5>
         </div>
         <div class="row">
             <div class="col-12 mb-2">
@@ -284,153 +284,153 @@
 </template>
 
 <script>
-    export default {
-        props: {
-            data: Object,
-        },
-        name: "PersonalInformationForm.vue",
-        data() {
-            return {
-                overview : {
-                    prenancyStatus: 'No',
-                    historyStatus: 'No',
-                    careProvider: 'No',
-                    occupation: '',
-                    employerName: '',
-                    employerAddress: '',
-                    employerContract: '',
-                    employmentStatus: 'Private practitioner',
-                    region: 'Region I (Ilocos Region)',
-                    province: 'Ilocos Norte',
-                    city: 'City of Batac',
-                    categoryIDOther: '',
-                    category: 'A1',
-                    subCategory: 'A1.1-COVID-19 Referral Hospitals',
-                    categoryID: 'PRC Number',
-                    categoryIDNo: '',
-                    philHealthNo: '',
-                    lastName: '',
-                    firstName: '',
-                    middleName: '',
-                    suffix: '',
-                    numberType: 'Mobile No.',
-                    phoneNo: '',
-                    email: '',
-                    gender: 'male',
-                    birthday: '',
-                    civilStatus: 'single',
-                    bldg: '',
-                    hln: '',
-                    street: '',
-                    subdivision: '',
-                },
-                provinces: null,
-                cities: null,
-                baranggays: null,
-                regions: this.$attrs.regions,
-                categoryIDs: [
-                    'PRC Number',
-                    'OSCA Number',
-                    'Facility ID Number',
-                    'PWD ID',
-                    'Other ID (Iba pa)',
+export default {
+    props: {
+        data: Object,
+    },
+    name: "PersonalInformationForm.vue",
+    data() {
+        return {
+            overview: {
+                prenancyStatus: 'No',
+                historyStatus: 'No',
+                careProvider: 'No',
+                occupation: '',
+                employerName: '',
+                employerAddress: '',
+                employerContract: '',
+                employmentStatus: 'Private practitioner',
+                region: 'Region I (Ilocos Region)',
+                province: 'Ilocos Norte',
+                city: 'City of Batac',
+                categoryIDOther: '',
+                category: 'A1',
+                subCategory: 'A1.1-COVID-19 Referral Hospitals',
+                categoryID: 'PRC Number',
+                categoryIDNo: '',
+                philHealthNo: '',
+                lastName: '',
+                firstName: '',
+                middleName: '',
+                suffix: '',
+                numberType: 'Mobile No.',
+                phoneNo: '',
+                email: '',
+                gender: 'male',
+                birthday: '',
+                civilStatus: 'single',
+                bldg: '',
+                hln: '',
+                street: '',
+                subdivision: '',
+            },
+            provinces: null,
+            cities: null,
+            baranggays: null,
+            regions: this.$attrs.regions,
+            categoryIDs: [
+                'PRC Number',
+                'OSCA Number',
+                'Facility ID Number',
+                'PWD ID',
+                'Other ID (Iba pa)',
+            ],
+            categories: {
+                'A1': 'A1-Health Care Worker',
+                'A2': 'A2-Senior Citizen',
+                'A3': 'A3-Adult with Comorbidities (18 to 59 years old)',
+                'A4': 'A4-Uniformed Personnel / Essential Workers',
+                'A5': 'A5-Indigent',
+                'B1': 'B1-Teachers and Social Worker',
+                'B2': 'B2-Other Government Workers',
+                'B3': 'B3-Other Essential Workers',
+                'B4': 'B4-Socio-Demographic groups at significantly Higher Risk',
+                'B5': 'B5-OFW',
+                'B6': 'B6-Remaining Workforce',
+                'C': 'C-Rest of the Population',
+            },
+            subCategories: {
+                'A1': [
+                    'A1.1-COVID-19 Referral Hospitals',
+                    'A1.2-Hospitals Catering to C19 Cases',
+                    'A1.3-Quarantine Isolation Facilities',
+                    'A1.4-Remaining Hospitals',
+                    'A1.5-DOH Employees',
+                    'A1.5-Disaster Risk Reduction and Management Office (DRRMO) Employees',
+                    'A1.5-DepEd Healthcare Workers',
+                    'A1.5-All Barangay Health Workers',
+                    'A1.5-Government Owned Community Based Primary Care Facilities',
+                    'A1.6-Stand-alone Clinics and Diagnostics',
+                    'A1.7-Personnel manning closed settings and institutions(BJMP, BuCor, Treatment and Rehabilitation Centers)',
+                    'A1.7-Social Workers in Orphanages, nursing homes and in other closed settings',
                 ],
-                categories: {
-                    'A1': 'A1-Health Care Worker',
-                    'A2': 'A2-Senior Citizen',
-                    'A3': 'A3-Adult with Comorbidities (18 to 59 years old)',
-                    'A4': 'A4-Uniformed Personnel / Essential Workers',
-                    'A5': 'A5-Indigent',
-                    'B1': 'B1-Teachers and Social Worker',
-                    'B2': 'B2-Other Government Workers',
-                    'B3': 'B3-Other Essential Workers',
-                    'B4': 'B4-Socio-Demographic groups at significantly Higher Risk',
-                    'B5': 'B5-OFW',
-                    'B6': 'B6-Remaining Workforce',
-                    'C': 'C-Rest of the Population',
-                },
-                subCategories: {
-                    'A1': [
-                        'A1.1-COVID-19 Referral Hospitals',
-                        'A1.2-Hospitals Catering to C19 Cases',
-                        'A1.3-Quarantine Isolation Facilities',
-                        'A1.4-Remaining Hospitals',
-                        'A1.5-DOH Employees',
-                        'A1.5-Disaster Risk Reduction and Management Office (DRRMO) Employees',
-                        'A1.5-DepEd Healthcare Workers',
-                        'A1.5-All Barangay Health Workers',
-                        'A1.5-Government Owned Community Based Primary Care Facilities',
-                        'A1.6-Stand-alone Clinics and Diagnostics',
-                        'A1.7-Personnel manning closed settings and institutions(BJMP, BuCor, Treatment and Rehabilitation Centers)',
-                        'A1.7-Social Workers in Orphanages, nursing homes and in other closed settings',
-                    ],
-                    'A4': [
-                        'A4.1-Private Sector workers who work outside their homes',
-                        'A4.2-Employees in government agencies and intrumentalities, government-owned or controlled corporations (GOCCs) and local government units',
-                        'A4.3-Informal sector workers and self-employed who work outside their homes and those working in private households',
-                    ],
-                    'B1': [
-                        'B1.1-Primary',
-                        'B1.2-Secondary',
-                        'B1.3-Tertiary',
-                        'B1.4-Vocational Educational Institutions',
-                    ],
-                    'B2': [
-                        'B2.1-Local Government  Unit',
-                        'B2.2-National Government Agencies (NGAs)',
-                        'B2.3-Government-Owned and Controlled Corporations (GOCCs)',
-                        'B2.4-Government Financial Institutions (GFIs)',
-                    ],
-                    'B4': [
-                        'B4.1-Person Deprived of Liberty (PDLs)',
-                        'B4.2-Person with Disability (PWDs)',
-                        'B4.3-Indigenous People (IPs)',
-                        'B4.4-All Filipinos in High-Density Areas',
-                        'B4.5-Eligible Private and Public Schools Students',
-                    ]
-                }
+                'A4': [
+                    'A4.1-Private Sector workers who work outside their homes',
+                    'A4.2-Employees in government agencies and intrumentalities, government-owned or controlled corporations (GOCCs) and local government units',
+                    'A4.3-Informal sector workers and self-employed who work outside their homes and those working in private households',
+                ],
+                'B1': [
+                    'B1.1-Primary',
+                    'B1.2-Secondary',
+                    'B1.3-Tertiary',
+                    'B1.4-Vocational Educational Institutions',
+                ],
+                'B2': [
+                    'B2.1-Local Government  Unit',
+                    'B2.2-National Government Agencies (NGAs)',
+                    'B2.3-Government-Owned and Controlled Corporations (GOCCs)',
+                    'B2.4-Government Financial Institutions (GFIs)',
+                ],
+                'B4': [
+                    'B4.1-Person Deprived of Liberty (PDLs)',
+                    'B4.2-Person with Disability (PWDs)',
+                    'B4.3-Indigenous People (IPs)',
+                    'B4.4-All Filipinos in High-Density Areas',
+                    'B4.5-Eligible Private and Public Schools Students',
+                ]
             }
-        },
-        watch: {
-            category: function (value) {
-                this.subCategory = '';
-                if (this.subCategories[value] !== undefined) {
-                    this.subCategory = this.subCategories[value][0];
-                }
-            },
-            categoryID: function (value) {
-                this.categoryIDOther = '';
-            },
-            region: function (value) {
-                this.province = '';
-            },
-            'overview': {
-                handler(val){
-                    this.$emit('setPersonalInfoClick', this.overview);
-                },
-                deep: true
-            }
-        },
-        methods: {
-            getProvinces() {
-                var $this = this;
-                axios.post(this.$attrs.get_provinces_link, {region: this.region}).then(function (value) {
-                    $this.provinces = value.data;
-                });
-            },
-            getCities() {
-                var $this = this;
-                axios.post(this.$attrs.get_cities_link, {region: this.region}).then(function (value) {
-                    $this.cities = value.data;
-                });
-            },
-        },
-        mounted() {
-            this.getProvinces();
-            this.getCities();
-            this.$emit('setPersonalInfoClick', this.overview);
         }
+    },
+    watch: {
+        category: function (value) {
+            this.subCategory = '';
+            if (this.subCategories[value] !== undefined) {
+                this.subCategory = this.subCategories[value][0];
+            }
+        },
+        categoryID: function (value) {
+            this.categoryIDOther = '';
+        },
+        region: function (value) {
+            this.province = '';
+        },
+        'overview': {
+            handler(val) {
+                this.$emit('setPersonalInfoClick', this.overview);
+            },
+            deep: true
+        }
+    },
+    methods: {
+        getProvinces() {
+            var $this = this;
+            axios.post(this.$attrs.get_provinces_link, {region: this.region}).then(function (value) {
+                $this.provinces = value.data;
+            });
+        },
+        getCities() {
+            var $this = this;
+            axios.post(this.$attrs.get_cities_link, {region: this.region}).then(function (value) {
+                $this.cities = value.data;
+            });
+        },
+    },
+    mounted() {
+        this.getProvinces();
+        this.getCities();
+        this.$emit('setPersonalInfoClick', this.overview);
     }
+}
 </script>
 
 <style scoped>
