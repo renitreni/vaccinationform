@@ -2,7 +2,7 @@
     <div>
         <div class="container h-100">
             <header class="d-flex flex-column justify-content-center text-center">
-                <h1 class="fw-bold">Ka-Ikeng COVID-19 Vaccine</h1>
+                <h1 class="fw-bold mt-3">Ka-Ikeng COVID-19 Vaccine</h1>
                 <h4>Pre-Registration Form</h4>
             </header>
             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -47,43 +47,43 @@
                 </div>
             </div>
         </div>
+        <button type="button" class="btn btn-primary">Ipasa</button>
     </div>
 </template>
 
 <script>
-    import PersonalInformationForm from "./Partials/PersonalInformationForm";
-    import AllergyForm from "./Partials/AllergyForm";
-    import MedicalHistoryForm from "./Partials/MedicalHistoryForm";
+import PersonalInformationForm from "./Partials/PersonalInformationForm";
+import AllergyForm from "./Partials/AllergyForm";
+import MedicalHistoryForm from "./Partials/MedicalHistoryForm";
 
-    export default {
-        props: {
-            data: Object,
-        },
-        data() {
-            return {
-                personalInfo: null,
-                allergies: null,
-            }
-        },
-        name: "VaccineForm.vue",
-        components: {
-            PersonalInformationForm,
-            AllergyForm,
-            MedicalHistoryForm
-        },
-        methods: {
-            setPersonalInfo(value) {
-                this.personalInfo = value;
-            },
-            setAllegriesInfo(value) {
-                this.allergies = value;
-            }
-        },
-        mounted() {
+export default {
+    props: {
+        data: Object,
+    },
+    data() {
+        return {
+            personalInfo: null,
+            allergies: null,
         }
+    },
+    name: "VaccineForm.vue",
+    components: {
+        PersonalInformationForm,
+        AllergyForm,
+        MedicalHistoryForm
+    },
+    methods: {
+        setPersonalInfo(value) {
+            this.personalInfo = value;
+        },
+        setAllegriesInfo(value) {
+            this.allergies = value;
+        }
+    },
+    mounted() {
     }
+}
 </script>
 
 <style scoped>
-
 </style>
